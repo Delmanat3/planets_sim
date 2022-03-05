@@ -17,8 +17,8 @@ class Planet:
     G = 6.674*10**-11
     au = 149.6e6 * 1000   # au km to meters
     grav = 6.67428e-11
-    scale = 250/au  # 1 au is 100 px
-    time_scale = 3600*2  # 2  min
+    scale = 100/au  # 1 au is 100 px
+    time_scale = 3600*100  # 2  min
 
     def __init__(self, x, y, radius, color, mass):
         self.x = x
@@ -104,13 +104,18 @@ def main():
 
     venus = Planet(0.700*Planet.au, 0, 14, WHITE, 4.8685*10**24)
     venus.y_vel = -35.02 * 1000
-    # saturn=Planet(0.723*Planet.au,0,14,WHITE,4.8685*10**24 )
-    # jupiter=Planet(0.723*Planet.au,0,14,WHITE,4.8685*10**24 )
+    saturn=Planet(-2.723*Planet.au,0,18,BLUE,8.8685*10**24 )
+    saturn.y_vel=30.345*1000
+    jupiter=Planet(-3.723*Planet.au,0,22,WHITE,10.8685*10**24 )
+    jupiter.y_vel=32.55*1000
 
-    planets = [sun, earth, mars, mercury, venus]
+    planets = [sun, earth, mars, mercury, venus,
+    # jupiter ,
+    # saturn
+    ]
 
     while run:
-        clock.tick(30)
+        clock.tick(60)
         win.fill((0, 0, 0))
         # pygame.display.update()
         for event in pygame.event.get():
